@@ -7,7 +7,7 @@ import com.masivian.model.NodeBinaryTree;
 import com.masivian.model.request.FindLCABinaryTreeRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * The BinaryTreeService class.
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  * @version 0.0.1
  */
 
-@Component
+@Service
 public class BinaryTreeService {
 
     /** The LOGGER constant */
@@ -53,7 +53,7 @@ public class BinaryTreeService {
 
         LOGGER.info("Trying to find the LCA for nodes [{}] and [{}]", firstNode, secondNode);
 
-        if (binaryTree.getRoot() == null) {
+        if (binaryTree == null || binaryTree.getRoot() == null) {
             throw new BinaryTreeException("The root of the tree can't be null");
         }
 
