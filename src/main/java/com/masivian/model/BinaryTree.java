@@ -36,8 +36,6 @@ public class BinaryTree {
 	 */
 	public void addNode(int index){
 
-		LOGGER.info("Validating [{}] index", index);
-
 		NodeBinaryTree nodeBinaryTree = new NodeBinaryTree(index);
 		if(this.root == null){
 			LOGGER.info("The binary tree haven't root. The root will be create with index [{}]", index);
@@ -62,7 +60,6 @@ public class BinaryTree {
 	 * @return The new node to validate into the loop. If the node is null, the process is finished.
 	 */
 	private NodeBinaryTree validateRightNode(NodeBinaryTree nodeBinaryTree, NodeBinaryTree validateNodeBinaryTree) {
-
 
 		if(validateNodeBinaryTree.getRightChild() == null){
 			LOGGER.info("Adding the node [{}] to the right of [{}]", nodeBinaryTree.getIndex(), validateNodeBinaryTree.getIndex());

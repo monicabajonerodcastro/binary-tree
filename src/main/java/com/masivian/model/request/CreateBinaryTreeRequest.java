@@ -1,4 +1,4 @@
-package com.masivian.model;
+package com.masivian.model.request;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 
 @Data
-public class BinaryTreeRequest {
+public class CreateBinaryTreeRequest {
 
     /** The index values to insert to the binary tree */
     private int[] values;

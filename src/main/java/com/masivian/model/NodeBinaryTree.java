@@ -26,6 +26,12 @@ public class NodeBinaryTree {
 
 	/**
 	 * The NodeBinaryTree Constructor
+	 * This constructor is mandatory for deserialization
+	 */
+	public NodeBinaryTree() {}
+
+	/**
+	 * The NodeBinaryTree Constructor
 	 * This constructor instantiates a NodeBinaryTree object with the index and its children null
 	 */
 	public NodeBinaryTree(int index){

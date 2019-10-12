@@ -1,6 +1,8 @@
 package com.masivian.controllers;
 
-import com.masivian.model.BinaryTreeRequest;
+import com.masivian.exception.BinaryTreeException;
+import com.masivian.model.request.CreateBinaryTreeRequest;
+import com.masivian.model.request.FindLCABinaryTreeRequest;
 import com.masivian.services.BinaryTreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,12 +32,31 @@ public class BinaryTreeController {
 
 	/**
 	 * Creates a binary tree with its respective nodes
-	 * @param binaryTreeRequest		Request containing an array of indexes
+	 * @param createBinaryTreeRequest		Request containing an array of indexes
 	 * @return A response entity with the new binary tree
 	 */
 	@PostMapping(path="/create")
-	public ResponseEntity<?> createBinaryTree(@RequestBody BinaryTreeRequest binaryTreeRequest) {
+	public ResponseEntity<?> createBinaryTree(@RequestBody CreateBinaryTreeRequest createBinaryTreeRequest) {
 
-		return new ResponseEntity<>(binaryTreeService.createBinaryTree(binaryTreeRequest), HttpStatus.OK);
+		return new ResponseEntity<>(binaryTreeService.createBinaryTree(createBinaryTreeRequest), HttpStatus.OK);
+	}
+
+	/**
+	 * Finds a lowest common ancestor between two nodes
+	 * @param findLCABinaryTreeRequest the request with the tree and the two nodes
+	 * @return A response entity with the lowest common ancestor. If the application founds some error, it returns a response
+	 * 		   	entity with a BAD_REQUEST or INTERNAL_SERVER_ERROR.
+	 */
+	@PostMapping(path="/findLCA")
+	public ResponseEntity<?> createBinaryTree(@RequestBody FindLCABinaryTreeRequest findLCABinaryTreeRequest) {
+
+		try{
+			return new ResponseEntity<>(binaryTreeService.findLowestCommonAncestor(findLCABinaryTreeRequest), HttpStatus.OK);
+		}catch (BinaryTreeException bte){
+			return new ResponseEntity<>(bte.getMessage(), HttpStatus.BAD_REQUEST);
+		}catch (Exception e){
+			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
 	}
 }
