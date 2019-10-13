@@ -18,9 +18,9 @@ Then you can run it.
 ### Endpoints
 
 The application exposes 3 endpoints:
-+ _/health:_This endpoint is used to verify the status of the application.
-+ _/binaryTree/create:_ This endpoint creates the binary tree. It receives as parameter a request object with an array of integer called `values`.
-+ _/binaryTree/findLCA:_ This endpoint finds the lowest common ancestor between two nodes. It receives as parameter a binary tree and the two nodes.
++ */health:*This endpoint is used to verify the status of the application.
++ */binaryTree/create:* This endpoint creates the binary tree. It receives as parameter a request object with an array of integer called `values`.
++ */binaryTree/findLCA:* This endpoint finds the lowest common ancestor between two nodes. It receives as parameter a binary tree and the two nodes.
 
 These endpoints are available in Swagger for an easier execution (_/swagger-ui.html_).
 
