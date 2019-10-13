@@ -3,6 +3,7 @@ package com.masivian.application;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * The Binary Tree Application class.
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan(basePackages={"com.masivian"})
 @SpringBootApplication
+@EnableSwagger2
 public class BinaryTreeApplication {
 
     /**
