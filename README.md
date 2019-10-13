@@ -1,6 +1,6 @@
 # Masivian - Binary Tree
 
-This is a SpringBoot Application and creates a binary tree or find the lowest common ancestor between two nodes.
+This is a SpringBoot Application that creates a binary tree or finds the lowest common ancestor between two nodes.
 
 ## Installation and run
 
